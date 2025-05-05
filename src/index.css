@@ -12,10 +12,27 @@ body {
   color: white;
   width: 100dvw;
   overflow-x: hidden;
-  height: 100%;
+  /* Change from height: 100% to min-height: 100% to allow scrolling */
+  min-height: 100%;
+  /* Add overflow-y: auto to explicitly enable vertical scrolling */
+  overflow-y: auto;
   background: #000;
   border-color: #3b3b3b;
   user-select: none;
+}
+
+html {
+  /* Add this to ensure the html element takes full height */
+  height: 100%;
+}
+
+/* Add this to ensure mobile touch events work properly */
+.main-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* For better scrolling on iOS */
 }
 
 canvas {
